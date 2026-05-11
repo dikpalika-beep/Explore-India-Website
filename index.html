@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore India</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color:#f5f7fa;
+            color:#333;
+            line-height:1.6;
+        }
+
+        header{
+            background: linear-gradient(rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)),
+            url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da');
+            background-size:cover;
+            background-position:center;
+            height:100vh;
+            color:white;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:20px;
+        }
+
+        header h1{
+            font-size:60px;
+            margin-bottom:15px;
+        }
+
+        header p{
+            font-size:22px;
+            max-width:700px;
+        }
+
+        nav{
+            background-color:#111;
+            padding:15px;
+            text-align:center;
+            position:sticky;
+            top:0;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 20px;
+            font-size:18px;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:#ff9800;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+            padding:50px 0;
+        }
+
+        .section-title{
+            text-align:center;
+            margin-bottom:40px;
+        }
+
+        .section-title h2{
+            font-size:40px;
+            color:#222;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:25px;
+        }
+
+        .card{
+            background:white;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 4px 10px rgba(0,0,0,0.15);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .card-content{
+            padding:20px;
+        }
+
+        .card-content h3{
+            color:#ff9800;
+            margin-bottom:10px;
+            font-size:28px;
+        }
+
+        .card-content p{
+            margin-bottom:15px;
+        }
+
+        .btn{
+            display:inline-block;
+            background:#ff9800;
+            color:white;
+            padding:10px 20px;
+            text-decoration:none;
+            border-radius:5px;
+            transition:0.3s;
+            border:none;
+            cursor:pointer;
+            margin:5px;
+        }
+
+        .btn:hover{
+            background:#e68900;
+        }
+
+        .about{
+            background:white;
+            padding:50px;
+            margin-top:50px;
+            border-radius:15px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+
+        .about-img{
+            width:100%;
+            max-width:700px;
+            border-radius:15px;
+            margin-bottom:20px;
+        }
+
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:50px;
+        }
+
+        @media(max-width:768px){
+
+            header h1{
+                font-size:40px;
+            }
+
+            header p{
+                font-size:18px;
+            }
+
+            nav a{
+                display:block;
+                margin:10px 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Explore India 🇮🇳</h1>
+
+        <p>
+            Experience the beauty, culture, mountains,
+            beaches, and royal heritage of India.
+        </p>
+
+        <br>
+
+        <button class="btn" onclick="welcomeMessage()">
+            Start Exploring
+        </button>
+
+    </header>
+
+    <nav>
+        <a href="#destinations">Destinations</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="container" id="destinations">
+
+        <div class="section-title">
+            <h2>Popular Destinations</h2>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+                alt="Goa">
+
+                <div class="card-content">
+
+                    <h3>Goa 🌴</h3>
+
+                    <p>
+                        Goa is famous for beaches, nightlife,
+                        seafood, and relaxing vibes.
+                    </p>
+
+                    <a href="https://en.wikipedia.org/wiki/Goa"
+                    target="_blank"
+                    class="btn">
+                        Learn More
+                    </a>
+
+                    <button class="btn"
+                    onclick="tripMessage('Goa')">
+                        Plan Trip
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+                alt="Manali">
+
+                <div class="card-content">
+
+                    <h3>Manali 🏔️</h3>
+
+                    <p>
+                        Manali is known for snowy mountains,
+                        adventure sports, and scenic beauty.
+                    </p>
+
+                    <a href="https://en.wikipedia.org/wiki/Manali,_Himachal_Pradesh"
+                    target="_blank"
+                    class="btn">
+                        Learn More
+                    </a>
+
+                    <button class="btn"
+                    onclick="tripMessage('Manali')">
+                        Plan Trip
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41"
+                alt="Jaipur">
+
+                <div class="card-content">
+
+                    <h3>Jaipur 🏰</h3>
+
+                    <p>
+                        Jaipur is famous for forts, palaces,
+                        royal culture, and heritage sites.
+                    </p>
+
+                    <a href="https://en.wikipedia.org/wiki/Jaipur"
+                    target="_blank"
+                    class="btn">
+                        Learn More
+                    </a>
+
+                    <button class="btn"
+                    onclick="tripMessage('Jaipur')">
+                        Plan Trip
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="about" id="about">
+
+            <h2>About Explore India</h2>
+
+            <br>
+
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1"
+            alt="Travel India"
+            class="about-img">
+
+            <p>
+                Explore India is a travel webpage created
+                to showcase the beauty of India's famous
+                tourist destinations. This project is built
+                using HTML, CSS, and JavaScript as part of
+                a web development internship task.
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer id="contact">
+
+        <p>Email: exploreindia@gmail.com</p>
+
+        <p>
+            © 2026 Explore India | Internship Project
+        </p>
+
+    </footer>
+
+    <script>
+
+        function welcomeMessage(){
+            alert("Welcome to Explore India 🇮🇳");
+        }
+
+        function tripMessage(place){
+            alert("Your trip to " + place + " is being planned! ✈️");
+        }
+
+    </script>
+
+</body>
+</html>
